@@ -29,6 +29,7 @@ esac
 iptables-restore < ./iptableslist.txt  # Restore IPv4 iptables rules from file
 iptables-save > /etc/iptables/rules.v4  # Save the current IPv4 iptables rules
 ip6tables-save > /etc/iptables/rules.v6  # Save the current IPv6 iptables rules
+echo "Restore iptables rules done" 
 
 # Enable IP forwarding
 sed -i 's/^#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/' /etc/sysctl.conf  # Uncomment the net.ipv4.ip_forward line in sysctl.conf
